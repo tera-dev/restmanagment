@@ -1,0 +1,451 @@
+@import "reset.css";
+
+html,
+body {
+    height: 100%;
+    padding: 0;
+}
+
+.wrap {
+    min-height: 100%;
+    height: auto;
+    padding: 0;
+}
+
+#nav-menu div.nav-menu-header{
+    height: 70px;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid #dddddd;
+    /*border: 1px solid green;*/
+}
+
+
+
+#nav-menu div.nav-menu-footer{
+    height: 70px;
+    text-align: center;
+    border-top: 1px solid #dddddd;
+}
+
+#nav-menu div.nav-menu-body{
+    padding-top: 10px;
+    height: calc(100% - 140px);
+    overflow-x:auto;
+}
+
+.content-area-header{
+    position: relative;
+    padding-left: 50px;
+    padding-right: 25px;
+    width: 100%;
+    height: 70px;
+    border-bottom: 1px solid #dddddd;    
+}
+
+.content-area-header div.header{
+    /*border: 1px solid red;*/
+    position: absolute;
+    top: 50%;
+    font-size: 1.5em;
+    /*border: 1px solid red;*/
+    transform: translate(0,-50%);
+    font-weight: bold;
+}
+
+.url-back{
+    padding-right: 6px;
+    font-size: 1.1em;
+    font-weight: 200;
+}
+
+.content-area-header div.header span{
+    
+}
+
+.content-area-body{
+    width: 100%;
+    padding-top: 30px;
+    margin-bottom: 200px;
+}
+
+.add-btn{
+    position: absolute;
+    top: 15px;
+    right: 40px;
+}
+
+#nav-menu{
+    /*position: absolute;*/
+    border-right: 1px solid #dddddd;
+    background-color: #f2f2f2;
+    height: 100%;
+    width: 230px;
+    /*float: left;*/
+    position: fixed;
+}
+
+#content-area{
+    margin-left: 230px; 
+    width: calc(100% - 230px);    
+    position: relative;
+}
+
+.search-form{
+    padding-left: 0 !important;
+}
+
+table,tr,td{
+    border: 1px solid black;
+    
+}
+td,th{
+    border-left-color: transparent !important; 
+    border-right-color: transparent !important; 
+    
+}
+.table-row{
+    background-color: transparent !important;
+}
+
+table{
+    width: 100%;
+    /*position: absolute;*/
+}
+
+
+
+
+.footer {
+    height: 60px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+.not-set {
+    color: #c55;
+    font-style: italic;
+}
+
+.container{
+    width: 100%;
+    padding: 0;
+}
+
+#nav-menu *{
+    user-select: none;
+}
+
+#nav-menu div.sub-container{
+   display: none; 
+   font-size: 1em;
+   padding-top: 5px;
+   /*padding-right: 15px;*/
+   padding-bottom: 5px;
+   /*border: 1px solid red;*/
+}
+
+#nav-menu p.sub{
+    font-size: 1.25em;
+    padding-left: 15px;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color:#757171;
+    transition: 0.3s;
+    /*border: 1px solid red;*/
+}
+
+#nav-menu p.sub:hover{
+    cursor: pointer;
+}
+
+#nav-menu p.active{
+    text-decoration: underline;
+    font-weight:500;
+    color: #444444;
+}
+
+#nav-menu p.sub .nav-menu-img{
+    opacity: 0.5;
+    margin-right: 5px;
+    /*height: 17px;*/
+    width: 15px;
+    /*display: none;*/
+    /*margin-top: 3px;*/
+}
+
+#nav-menu p.sub .nav-menu-img.active{
+    opacity: 0.7;
+}
+
+#nav-menu div.nav-menu-header .nav-menu-to-terminal{
+    display: inline-block;
+    margin-top: 7px;
+    /*border: 1px solid red;*/
+}
+
+#nav-menu div.sub-container a{
+    padding-left: 35px;
+    padding-bottom: 3px;
+    padding-right: 5px;
+    display: block;
+    text-decoration: none;
+    color: #4379ce;
+    padding-top: 3px;
+    width: 100%;
+    transition: 0.5s;
+    /*border: 1px solid yellow;*/
+    
+}
+
+#nav-menu div.sub-container a.activeLink{
+    color: #444444;
+    font-weight: bold;
+    background-color: #e5e5e5;
+}
+
+#nav-menu div.sub-container a:hover{
+    /*color:#1a1919;*/
+    /*color: red;*/
+    background-color: #e5e5e5;
+    /*background-color: #d1d1d1;*/
+    
+}
+div.row.ingr{
+    position: relative;
+    height: 55px;
+    background-color: #f2f2f2;
+    /*border: 1px solid #ddd;*/
+    border-radius: 5px 5px 5px 5px;
+    padding-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0;
+    padding-right: 0;
+}
+.ingr p{
+    margin: 15px;
+}
+.ingridients{
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 3px 3px 3px 3px;  
+}
+input[type="checkbox"]:checked, 
+input[type="checkbox"]:not(:checked), 
+input[type="radio"]:checked, 
+input[type="radio"]:not(:checked) 
+{
+    position: absolute;
+    left: -9999px;
+}
+
+input[type="checkbox"]:checked + label, 
+input[type="checkbox"]:not(:checked) + label, 
+input[type="radio"]:checked + label, 
+input[type="radio"]:not(:checked) + label {
+    display: inline-block;
+    position: relative;
+    padding-left: 22px;
+    line-height: 17px;
+    cursor: pointer;
+}
+
+
+input[type="checkbox"]:not(:checked) + label:before,
+input[type="radio"]:not(:checked) + label:before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #b8b8b8;
+    border-radius: 7px 7px 7px 7px;
+    background-color: #ffffff;
+}
+
+input[type="checkbox"]:checked + label:before, 
+input[type="radio"]:checked + label:before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 16px;
+    height: 16px;
+    /*border: 1px solid #dddddd;*/
+    background-color: #0089BA;
+}
+
+input[type="checkbox"]:checked + label:before, 
+input[type="checkbox"]:not(:checked) + label:before {
+    border-radius: 4.5px;
+}
+
+input[type="radio"]:checked + label:before, 
+input[type="radio"]:not(:checked) + label:before {
+    border-radius: 100%;
+}
+
+input[type="checkbox"]:checked + label:after, 
+input[type="checkbox"]:not(:checked) + label:after, 
+input[type="radio"]:checked + label:after, 
+input[type="radio"]:not(:checked) + label:after {
+    content: "";
+    position: absolute;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+input[type="checkbox"]:checked + label:after, 
+input[type="checkbox"]:not(:checked) + label:after {
+    left: 3px;
+    top: 3.5px;
+    width: 11px;
+    height: 6px;
+    border-left: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+input[type="radio"]:checked + label:after, 
+input[type="radio"]:not(:checked) + label:after {
+    left: 4px;
+    top: 4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background-color: #ffffff;
+}
+
+input[type="checkbox"]:not(:checked) + label:after, 
+input[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+}
+
+input[type="checkbox"]:checked + label:after, 
+input[type="radio"]:checked + label:after {
+    opacity: 1;
+}
+
+
+
+input[type="file"]{
+   
+}
+
+hr{
+    border: none;
+    height: 1px;
+    /* Set the hr color */
+    color: #dddddd; /* old IE */
+    background-color: #dddddd; 
+}
+
+form.add-item{
+    padding: 50px;
+}
+
+div.row{
+    width: 100%;
+    margin-bottom: 5px;
+    padding-left: 50px ;
+    padding-right: 20px ;
+}
+
+/* add sorting icons to gridview sort links */
+a.asc:after, a.desc:after {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 5px;
+}
+
+a.asc:after {
+    content: /*"\e113"*/ "\e151";
+}
+
+a.desc:after {
+    content: /*"\e114"*/ "\e152";
+}
+
+.sort-numerical a.asc:after {
+    content: "\e153";
+}
+
+.sort-numerical a.desc:after {
+    content: "\e154";
+}
+
+.sort-ordinal a.asc:after {
+    content: "\e155";
+}
+
+.sort-ordinal a.desc:after {
+    content: "\e156";
+}
+
+.grid-view th {
+    white-space: nowrap;
+}
+
+.hint-block {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+}
+
+.error-summary {
+    color: #a94442;
+    background: #fdf7f7;
+    border-left: 3px solid #eed3d7;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+}
+
+/* align the logout "link" (button in form) of the navbar */
+.nav li > form > button.logout {
+    padding: 15px;
+    border: none;
+}
+
+@media(max-width:767px) {
+    .nav li > form > button.logout {
+        display:block;
+        text-align: left;
+        width: 100%;
+        padding: 10px 15px;
+    }
+}
+
+.nav > li > form > button.logout:focus,
+.nav > li > form > button.logout:hover {
+    text-decoration: none;
+}
+
+.nav > li > form > button.logout:focus {
+    outline: none;
+}
