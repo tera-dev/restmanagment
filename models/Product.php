@@ -42,7 +42,7 @@ class Product extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'unitID', 'expiry_count', 'product_typeID'], 'required'],
+            [['name', 'unitID', 'expiry_count', 'product_typeID', 'categoryID'], 'required'],
             [['unitID', 'expiry_count', 'product_typeID', 'categoryID'], 'integer'],
             [['name'], 'string', 'max' => 200],
             [['half_stuff_recipe'], 'string', 'max' => 2000],

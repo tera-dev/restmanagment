@@ -29,17 +29,21 @@ use app\widgets\ContentHeader;
             <div class="col-xs-3">
                 <span>Единица измерения</span>
             </div>
-            <div class="col-xs-2">
-                 <?= $form->field($model, 'unitID')->dropDownList(
-                    ArrayHelper::map(Unit::find()->all(),'unitID','name'))->label(false)
-                     ?>
+            <div class="col-xs-4">
+                <?= $form->field($model, 'unitID')->dropDownList(
+                        ArrayHelper::map(Unit::find()->all(),'unitID','name'),
+                        [
+                            'prompt' => 'Выберите единицу измерения'
+                        ]
+                    )->label(false)
+                ?>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-3">
                 <span>Срок пригодности</span>
             </div>
-            <div class="col-xs-2">
+            <div class="col-xs-4">
                  <?= $form->field($model, 'expiry_count')->input('number')->label(false) ?>
             </div>
         </div>
@@ -49,11 +53,12 @@ use app\widgets\ContentHeader;
                 <span>Категория</span>
             </div>
             <div class="col-xs-7">
-                 <?= $form->field($model, 'categoryID')->dropDownList(
+                <?= $form->field($model, 'categoryID')->dropDownList(
                     ArrayHelper::map(ProductCategory::find()->all(),'product_categoryID','name'),
                          [
                              'prompt' => 'Выберите категорию'
-                         ])->label(false) ?>
+                         ]
+                )->label(false) ?>
             </div>
         </div>
         <div class="row">

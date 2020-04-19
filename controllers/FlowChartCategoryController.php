@@ -56,6 +56,10 @@ class FlowChartCategoryController extends Controller
     public function actionView($id)
     {
         $model = $this->findModel($id);
+//        echo '<pre>';
+//        print_r($model->name);
+//        echo '</pre>';
+//        
         return $this->render('view', [
             'model' => $model,
             'parentName' => $this->getParentName($model->parentID)
@@ -146,8 +150,8 @@ class FlowChartCategoryController extends Controller
         return $str;
     }
     
-    public function getParentName($parentId){
-        return FlowChartCategory::findOne(['flow_chart_categoryID' => $parentId])->name;
+    public function getParentName($id){
+        return $id === 0 ?  NULL : FlowChartCategory::findOne(['flow_chart_categoryID' => $id])->name;
     }
     
 
@@ -194,7 +198,7 @@ class FlowChartCategoryController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = FlowChartCategory::findOne($id)) !== null) {
+        if (($model = FlowChartCategory::findOne(['flow_chart_categoryID' => $id])) !== null) {
             return $model;
         }
 
