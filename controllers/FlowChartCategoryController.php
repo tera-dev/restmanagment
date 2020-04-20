@@ -169,9 +169,11 @@ class FlowChartCategoryController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->flow_chart_categoryID]);
         }
-
+        
+        $options = $this->categories_to_string($this->getTree());
         return $this->render('update', [
             'model' => $model,
+            'options' => $options
         ]);
     }
 

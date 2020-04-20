@@ -14,6 +14,7 @@ $this->title = 'Обновление категории: ' . $model->name;
 
     <?= $this->render('_form', [
         'model' => $model,
+        'options' => $options,
     ]) ?>
 
 </div>

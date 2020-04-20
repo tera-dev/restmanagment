@@ -106,30 +106,30 @@ $(window).on('load',function (){
 
 $(window).on('load',function (){
     $('div.ingridients').on('change','select',function (){
-        $(this).parent().css({'border':'','border-radius':''});
+        $(this).parent().css({'box-shadow':'0px 0px 0px 0px rgba(255,0,0,1)','border-radius':''});
         $(this).parents('div.ingr').find('.weight-ingrid').focus(); 
     });
 });
-
+ //0px 0px 5px 1px rgba(255,0,0,1);
 function validateIngridientList(){
     let isValidated = true;
     $('.ingr').each(function (){
 //        window.console.log("-" + $(this).find('.id-ingrid').attr('class') + "-");
 //        window.console.log("-" + $(this).find('.weight-ingrid').val() + "-");
         if (!$(this).find('select').val()) {
-            $(this).find("div.id-ingrid").css({'border':'1px solid red','border-radius':'5px'});
+            $(this).find("div.id-ingrid").css({'box-shadow':'0px 0px 5px 1px rgba(255,0,0,1)','border-radius':'5px'});
             isValidated = false;
         }
         else{
-            $(this).find("div.id-ingrid").css({'border':'','border-radius':''});
+            $(this).find("div.id-ingrid").css({'box-shadow':'0px 0px 0px 0px rgba(255,0,0,1)','border-radius':''});
         }
         if (!$(this).find('.weight-ingrid').val()) {
             $(this).find('.weight-ingrid').
-                css({'border':'1px solid red'});
+                css({'box-shadow':'0px 0px 5px 1px rgba(255,0,0,1)'});
             isValidated = false;
         }
         else{
-            $(this).find(".weight-ingrid").css({'border':''});
+            $(this).find(".weight-ingrid").css({'box-shadow':'0px 0px 0px 0px rgba(255,0,0,1)'});
         }
     });
     return isValidated;
@@ -139,9 +139,9 @@ $(window).on('load',function (){
     $('div.ingridients').on('focusout','.weight-ingrid',function (){
         console.log('focus weight out');
         if (!$(this).val()) {
-            $(this).css({'border':'1px solid red'});
+            $(this).css({'box-shadow':'0px 0px 5px 1px rgba(255,0,0,1)'});
         }
-        else $(this).css({'border':''});
+        else $(this).css({'box-shadow':'0px 0px 0px 0px rgba(255,0,0,1)'});
     });
 });
 
