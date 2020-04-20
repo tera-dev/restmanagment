@@ -29,7 +29,7 @@ class FlowChartCategory extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name'], 'required'],
+            [['name','parentID'], 'required'],
             [['parentID'], 'safe'],
             [['name'], 'string', 'max' => 100],
         ];
@@ -43,7 +43,7 @@ class FlowChartCategory extends \yii\db\ActiveRecord
         return [
             'flow_chart_categoryID' => 'Flow Chart Category I D',
             'name' => 'Название',
-            'parentID' => 'Parent I D',
+            'parentID' => 'Категория',
         ];
     }
 

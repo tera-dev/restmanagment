@@ -75,27 +75,14 @@ class FlowChartCategoryController extends Controller
     {
         $model = new FlowChartCategory();
         if ($model->load(Yii::$app->request->post())) {
-            echo "<pre>";
-            print_r(Yii::$app->request->post());
-            echo "</pre>";
-            die();
-            if ($model->validate()) {
-                if ($model->parentID === '') {
-                    $model->parentID = 0;
-                    $model->save();
-                }
-                else{
-                    $model->save();
-                }
-                return $this->refresh();
-            }
-            
+            if ($model->parentID === NULL) $model->parentID = 0;
+            $model->save();
+            return $this->refresh();
         }
-        
         $options = $this->categories_to_string($this->getTree());
         return $this->render('create', [
             'model' => $model,
-            'options' => $options
+            'options' => $options,
         ]);
     }
     

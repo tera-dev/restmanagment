@@ -29,19 +29,24 @@ use brussens\bootstrap\select\Widget as Select;
                     ])->textInput()->label(false)?>
                 </div>
             </div>
+    
+            
+            <?php if ($model->parentID !== 0):?>
+                <div class="row">
+                    <div class="col-xs-3">
+                        <span>Категория</span>
+                    </div>
+                    <div class="col-xs-7">
+                        <?= $form->field($model, 'parentID')->dropDownList($options,
+                        [
+                            'prompt' => 'Выберите категорию',
+                            'encodeSpaces' => true
+                        ])->label(false)?>
+                    </div>
+                </div>
+            <?php endif;?>
 
-            <div class="row">
-                <div class="col-xs-3">
-                    <span>Категория</span>
-                </div>
-                <div class="col-xs-7">
-                    <?= $form->field($model, 'parentID')->dropDownList($options,
-                    [
-                        'prompt' => 'Главный экран',
-                        'encodeSpaces' => true
-                    ])->label(false)?>
-                </div>
-            </div>
+            
             <hr/>
             <div class="row">
                 <div class="col-xs-3"></div>
