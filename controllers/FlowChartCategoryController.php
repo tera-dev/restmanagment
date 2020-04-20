@@ -74,7 +74,7 @@ class FlowChartCategoryController extends Controller
     public function actionCreate()
     {
         $model = new FlowChartCategory();
-        if ($model->load(Yii::$app->request->post())) {
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->parentID === NULL) $model->parentID = 0;
             $model->save();
             return $this->refresh();
