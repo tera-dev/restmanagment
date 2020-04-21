@@ -56,6 +56,8 @@ $(window).on('load',function (){
 
 //to show ingridient menu for half-stuff
 $(window).on('load',function (){
+    $('input:radio').eq(1).attr('class','half-stuff-radio');
+    
     addNecessaryLabelsNearRadio();
     
      $('input:radio').on('change',function (){
@@ -69,15 +71,10 @@ $(window).on('load',function (){
 });
 
 function addNecessaryLabelsNearRadio(){
-//    $('div#product-product_typeid label').html('');
-    $('div#product-product_typeid label input:radio').each(function (){
-        $(this).attr('id',$(this).index());
-    });
     
-    $('div#product-product_typeid label').each(function (){
-        $(this).prepend(`<label for='${$(this).index()}'></label>`);
-    });
-    
+    $('div#product-product_typeid label')
+            .attr('class', 'container-label')
+            .append("<span class='checkmark-span'></span>"); 
     
 }
 
