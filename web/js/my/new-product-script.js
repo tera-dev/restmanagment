@@ -54,12 +54,14 @@ $(window).on('load',function (){
     });
 });
 
+$(document).ready(function (){
+    $('input:radio').eq(1).attr('class','half-stuff-radio');
+    addNecessaryLabelsNearRadio();
+});
+
 //to show ingridient menu for half-stuff
 $(window).on('load',function (){
-    $('input:radio').eq(1).attr('class','half-stuff-radio');
-    
-    addNecessaryLabelsNearRadio();
-    
+       
      $('input:radio').on('change',function (){
         if ($(this).hasClass('half-stuff-radio')) {
             $('.to-show-if-half-stuff').slideDown(150).addClass('visible');

@@ -246,13 +246,13 @@ div.row.ingr{
 }
 
 .container-label {
-  display: block;
+  display: inline-block;
   position: relative;
   padding-left: 25px;
   margin-bottom: 12px;
   cursor: pointer;
   width: 150px;
-  border:1px solid red;
+  /*border:1px solid red;*/
   /*font-size: 22px;*/
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -271,14 +271,14 @@ div.row.ingr{
 
 /* Create a custom radio button */
 .checkmark-span {
-  width: 15px;
+  
   position: absolute;
-  border:1px solid #dddddd;
+  border:1px solid #b8b8b8;
   top: 10%;
   left: 0;
-  height: 14px;
-  width: 14px;
-  background-color: #eee;
+  height: 16px;
+  width: 16px;
+  background-color: white;
   border-radius: 50%;
 }
 
@@ -289,7 +289,8 @@ div.row.ingr{
 
 /* When the radio button is checked, add a blue background */
 .container-label input:checked ~ .checkmark-span {
-    background-color: #4649ba;
+    border:none;
+    background-color: #0089BA;
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
@@ -301,13 +302,13 @@ div.row.ingr{
 
 /* Show the indicator (dot/circle) when checked */
 .container-label input:checked ~ .checkmark-span:after {
-  display: inline;
+  display: inline-block;
 }
 
 /* Style the indicator (dot/circle) */
 .container-label .checkmark-span:after {
-  top: 2px;
-  left: 2px;
+  top: 4px;
+  left: 4px;
   width: 8px;
   height: 8px;
   border-radius: 50%;
