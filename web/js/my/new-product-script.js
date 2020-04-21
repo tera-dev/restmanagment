@@ -69,12 +69,16 @@ $(window).on('load',function (){
 });
 
 function addNecessaryLabelsNearRadio(){
-    for (var i = 0; i < 2; i++) {
-        $(`div#product-product_typeid label input:radio:eq(${i})`)
-                .attr('id', i)
-                .parent()
-                .prepend(`<label for=${i}></label>`);
-    }
+//    $('div#product-product_typeid label').html('');
+    $('div#product-product_typeid label input:radio').each(function (){
+        $(this).attr('id',$(this).index());
+    });
+    
+    $('div#product-product_typeid label').each(function (){
+        $(this).prepend(`<label for='${$(this).index()}'></label>`);
+    });
+    
+    
 }
 
 $(window).on('load',function (){
