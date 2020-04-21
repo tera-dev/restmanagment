@@ -56,6 +56,8 @@ $(window).on('load',function (){
 
 //to show ingridient menu for half-stuff
 $(window).on('load',function (){
+    addNecessaryLabelsNearRadio();
+    
      $('input:radio').on('change',function (){
         if ($(this).hasClass('half-stuff-radio')) {
             $('.to-show-if-half-stuff').slideDown(150).addClass('visible');
@@ -65,6 +67,15 @@ $(window).on('load',function (){
         }
      });
 });
+
+function addNecessaryLabelsNearRadio(){
+    for (var i = 0; i < 2; i++) {
+        $(`div#product-product_typeid label input:radio:eq(${i})`)
+                .attr('id', i)
+                .parent()
+                .prepend(`<label for=${i}></label>`);
+    }
+}
 
 $(window).on('load',function (){
     var id,weight;

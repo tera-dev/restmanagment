@@ -69,21 +69,22 @@ use app\widgets\ContentHeader;
                     <?= $form->field($model, 'product_typeID')->radioList(
                         [\app\models\Product::PRODUCT_TYPE => 'Ингридиент',
                          \app\models\Product::HALF_STUFF_TYPE => 'Полуфабрикат' 
-                        ],
-                        [
-                            'item' => function($index, $label, $name, $checked, $value) {
-                                $checked = '';
-                                $class = 'half-stuff-radio';
-                                if ($label == 'Ингридиент') {
-                                    $checked = 'checked';
-                                    $class = 'product-radio';
-                                }
-                                $return = "<input type='radio' name='$name' id='$index' value='$value' class='$class' $checked>";
-                                $return .= "<label for='$index'>$label</label>";
-
-                                return $return;
-                            }
-                        ])->label(false) 
+                        ]
+//                        [
+//                            'item' => function($index, $label, $name, $checked, $value) {
+//                                $checked = '';
+//                                $class = 'half-stuff-radio';
+//                                if ($label == 'Ингридиент') {
+//                                    $checked = 'checked';
+//                                    $class = 'product-radio';
+//                                }
+//                                $return = "<input type='radio' name='$name' id='$index' value='$value' class='$class' $checked>";
+//                                $return .= "<label for='$index'>$label</label>";
+//
+//                                return $return;
+//                            }
+//                        ]
+                            )->label(false) 
                     ?>
             </div>
         </div>

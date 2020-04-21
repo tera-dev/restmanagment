@@ -244,6 +244,8 @@ div.row.ingr{
     border: 1px solid #ddd;
     border-radius: 3px 3px 3px 3px;  
 }
+
+
 input[type="checkbox"]:checked, 
 input[type="checkbox"]:not(:checked), 
 input[type="radio"]:checked, 
@@ -286,7 +288,7 @@ input[type="radio"]:checked + label:before {
     top: 0px;
     width: 16px;
     height: 16px;
-    /*border: 1px solid #dddddd;*/
+    border: 1px solid #dddddd;
     background-color: #0089BA;
 }
 
