@@ -291,6 +291,7 @@ div.row.ingr{
 .container-label input:checked ~ .checkmark-span {
     border:none;
     background-color: #0089BA;
+    transition: ease 0.3s;
 }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */

@@ -57,6 +57,9 @@ $(window).on('load',function (){
 $(document).ready(function (){
     $('input:radio').eq(1).attr('class','half-stuff-radio');
     addNecessaryLabelsNearRadio();
+    if ($('.half-stuff-radio').attr('checked')) {
+        $('.to-show-if-half-stuff').slideDown(150).addClass('visible');
+    }
 });
 
 //to show ingridient menu for half-stuff
