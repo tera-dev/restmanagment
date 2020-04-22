@@ -16,6 +16,34 @@ $(window).on('load',function (){
             }
         });
 });
+
+
+$(window).on('load',function (){
+    $('.test-b').click(function (){
+//        $('#product-half_stuff_recipe').val();
+        let re = JSON.parse($('#product-half_stuff_recipe').val());
+        
+        re.forEach(function (item,index){
+            $('.add-ingt').trigger('click');
+            $('div.ingr:last').find('.selectpicker').selectpicker('val',item.id);
+            $('div.ingr:last').find('.weight-ingrid').val(item.weight);
+            console.log(item.id);
+            console.log(item.weight);
+        });
+        
+//        for (let ingridient in re) {
+//            console.log(ingridient.id);
+//            console.log(ingridient.weight);
+//            $('.add-ingt').trigger('click');
+//            $('div.ingr:last').find('.selectpicker').selectpicker('val',ingridient.id);
+//            $('div.ingr:last').find('.weight-ingrid').val(ingridient.weight);
+//        }
+        console.log(re);
+        
+    });
+});
+
+
 $(window).on('load',function (){
 //    alert();
     
@@ -100,7 +128,7 @@ $(window).on('load',function (){
                         weight:$(this).find('.weight-ingrid').val()
                         });
                     });
-                    $('#product-half_stuff_recipe').attr('value',JSON.stringify(recipe));
+                    $('#product-half_stuff_recipe').attr('value',JSON.stringify(recipe.items));
                     $('form').submit();
                 }
             }

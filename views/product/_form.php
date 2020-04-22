@@ -110,6 +110,8 @@ use app\widgets\ContentHeader;
             <div class="col-xs-7">
                  <div class="form-group">
                     <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success btn-lg send-product']) ?>
+                     <input type="button" value="presssss" class="btn btn-success btn-lg test-b"/>
+                     <input type="hidden" value="tratata" class="test-h"/>
                 </div>
             </div>
         </div>
