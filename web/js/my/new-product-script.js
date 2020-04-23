@@ -6,50 +6,39 @@
 var prods = new Object();
 var recipe = {items:[]};
 $(window).on('load',function (){
-        $.ajax({
-        url: 'index.php?r=product/get-products',
-        data:{},
-        type: 'GET',
-        success: function (data) {
-                prods = JSON.parse(data);
-                window.console.log(prods);
-            }
-        });
-});
-
-
-$(window).on('load',function (){
-    $('.test-b').click(function (){
-//        $('#product-half_stuff_recipe').val();
-        let re = JSON.parse($('#product-half_stuff_recipe').val());
-        
-        re.forEach(function (item,index){
-            $('.add-ingt').trigger('click');
-            $('div.ingr:last').find('.selectpicker').selectpicker('val',item.id);
-            $('div.ingr:last').find('.weight-ingrid').val(item.weight);
-            console.log(item.id);
-            console.log(item.weight);
-        });
-        
-//        for (let ingridient in re) {
-//            console.log(ingridient.id);
-//            console.log(ingridient.weight);
-//            $('.add-ingt').trigger('click');
-//            $('div.ingr:last').find('.selectpicker').selectpicker('val',ingridient.id);
-//            $('div.ingr:last').find('.weight-ingrid').val(ingridient.weight);
-//        }
-        console.log(re);
-        
+//        $.ajax({
+//        url: 'index.php?r=product/get-products',
+//        data:{},
+//        type: 'GET',
+//        success: function (data) {
+//                prods = JSON.parse(data);
+//                window.console.log(prods);
+//            }
+//        }).then(console.log('success from THEN!!'));
+//       $.get('index.php?r=product/get-products')
+    $.get('index.php?r=product/get-products').then(function (result){
+        console.log('success before PARSE');
+        prods = JSON.parse(result);
+        console.log(prods);
+    }).then(function (){
+        console.log('success after PARSE');
+    }).then(buildFilledIngridientListForProductUpdate).
+       then(function (){
+           console.log('building FINISHED');
     });
 });
 
+function getProducts(){
+    $.get('index.php?r=product/get-products');
+}
 
-$(window).on('load',function (){
-//    alert();
-    
-    $('.add-ingt').on('click',function (){
-//        alert();
-        $('div.ingridients').append(`
+$(document).ready(function (){
+    console.log('success from another!!');
+});
+
+
+function addRowInHulfStuffIngridientsList(){
+            $('div.ingridients').append(`
             <div class="row ingr">
                 
                 <div class="ingridient-id col-xs-8">
@@ -79,8 +68,50 @@ $(window).on('load',function (){
                         on('change',function (){
                             window.console.log($(this).val());
                         });
+}
+
+
+$(window).on('load',function (){
+//    alert();
+
+    $('.add-ingt').on('click',addRowInHulfStuffIngridientsList);
+    $('.add-ingt').on('click',function (){
+//        $.console.log('first').then;
+        
+//        $('div.ingridients').append(`
+//            <div class="row ingr">
+//                
+//                <div class="ingridient-id col-xs-8">
+//                </div>
+//                <div class="ingridient-weight col-xs-4">
+//                    <input type="number" class="form-control weight-ingrid" placeholder="Вес"/>
+//                </div>
+//                <i class="fa fa-times-circle remove-ingr"></i>
+//            </div>`);
+//    
+//    
+//        $('div.ingridient-id').last().append(`<select class="id-ingrid"></select>`);
+//        var selectBox = $('.ingridients select').last();
+//        if( selectBox!== undefined){
+//            for(var key in prods){
+//                for(var innerKey in prods[key]){
+//                    selectBox.get(0).options.add( new Option(prods[key][innerKey]  + ", " + innerKey,  key));
+//                } 
+//            }
+//        }
+//        selectBox.last().addClass('selectpicker').attr({
+//                            'data-live-search':'true',
+//                            'data-size':'5',
+//                            'data-width':'100%',
+//                            'title':'Выберите ингридиент'
+//                        }).selectpicker('refresh').
+//                        on('change',function (){
+//                            window.console.log($(this).val());
+//                        });
     });
 });
+
+
 
 $(document).ready(function (){
     $('input:radio').eq(1).attr('class','half-stuff-radio');
@@ -110,6 +141,48 @@ function addNecessaryLabelsNearRadio(){
             .append("<span class='checkmark-span'></span>"); 
     
 }
+
+function buildFilledIngridientListForProductUpdate(){
+    let jsonRecipse = $('#product-half_stuff_recipe').val();
+    if (jsonRecipse !== '') {
+        let re = JSON.parse(jsonRecipse);
+        re.forEach(function (item,index){
+            addRowInHulfStuffIngridientsList();
+            $('div.ingr:last').find('.selectpicker').selectpicker('val',item.id);
+            $('div.ingr:last').find('.weight-ingrid').val(item.weight);
+            console.log(item.id);
+            console.log(item.weight);
+        });
+    }
+}
+
+$(window).on('load',function (){
+//    $('.test-b').click(function (){
+//        let jsonRecipse = $('#product-half_stuff_recipe').val();
+//        if (jsonRecipse !== '') {
+//            let re = JSON.parse(jsonRecipse);
+//            re.forEach(function (item,index){
+////                $('.add-ingt').trigger('click');
+//                addRowInHulfStuffIngridientsList();
+//                $('div.ingr:last').find('.selectpicker').selectpicker('val',item.id);
+//                $('div.ingr:last').find('.weight-ingrid').val(item.weight);
+//                console.log(item.id);
+//                console.log(item.weight);
+//            });
+//        }
+//    });
+//    let jsonRecipse = $('#product-half_stuff_recipe').val();
+//    if (jsonRecipse !== '') {
+//        let re = JSON.parse(jsonRecipse);
+//        re.forEach(function (item,index){
+//            addRowInHulfStuffIngridientsList();
+//            $('div.ingr:last').find('.selectpicker').selectpicker('val',item.id);
+//            $('div.ingr:last').find('.weight-ingrid').val(item.weight);
+//            console.log(item.id);
+//            console.log(item.weight);
+//        });
+//    }
+});
 
 $(window).on('load',function (){
     var id,weight;

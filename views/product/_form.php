@@ -66,26 +66,11 @@ use app\widgets\ContentHeader;
                 <span>Тип</span>
             </div>
             <div class="col-xs-7">
-                    <?= $form->field($model, 'product_typeID')->radioList(
-                        [\app\models\Product::PRODUCT_TYPE => 'Ингридиент',
-                         \app\models\Product::HALF_STUFF_TYPE => 'Полуфабрикат' 
-                        ]
-//                        [
-//                            'item' => function($index, $label, $name, $checked, $value) {
-//                                $checked = '';
-//                                $class = 'half-stuff-radio';
-//                                if ($label == 'Ингридиент') {
-//                                    $checked = 'checked';
-//                                    $class = 'product-radio';
-//                                }
-//                                $return = "<input type='radio' name='$name' id='$index' value='$value' class='$class' $checked>";
-//                                $return .= "<label for='$index'>$label</label>";
-//
-//                                return $return;
-//                            }
-//                        ]
-                            )->label(false) 
-                    ?>
+                <?= $form->field($model, 'product_typeID')->radioList(
+                    [\app\models\Product::PRODUCT_TYPE => 'Ингридиент',
+                     \app\models\Product::HALF_STUFF_TYPE => 'Полуфабрикат' 
+                    ]
+                )->label(false) ?>
             </div>
         </div>
         <div class="row to-show-if-half-stuff">
