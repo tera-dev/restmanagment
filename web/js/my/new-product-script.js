@@ -40,7 +40,7 @@ function addRowInHulfStuffIngridientsList(){
             'title':'Выберите ингридиент'
         }).selectpicker('refresh').
         on('change',function (){
-            window.console.log($(this).val());
+//            window.console.log($(this).val());
         });
 }
 
@@ -159,7 +159,8 @@ function validateIngridientList(){
 }
 
 $(window).on('load',function (){
-    $('div.ingridients').on('focusout','.weight-ingrid',function (){
+       
+    $('div.ingridients').on('focusout input','.weight-ingrid',function (){
         console.log('focus weight out');
         if (!$(this).val()) {
             $(this).css({'box-shadow':'0px 0px 5px 1px rgba(255,0,0,1)'});
