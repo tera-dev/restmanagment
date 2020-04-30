@@ -77,7 +77,7 @@ use app\widgets\ContentHeader;
             <div class="col-xs-3"></div>
             <div class="col-xs-7">
                  <div class="ingridients">
-                    <h4>Ингридиенты</h3>
+                     <h4>Ингридиенты</h3>
                     
                 </div>
                 <div class="btn btn-primary add-ingt">Добавить</div>
@@ -128,7 +128,12 @@ use app\widgets\ContentHeader;
 
 <?php $css =
 <<<CSS
-       .add-ingt{
+       
+        div.ingridients h4{ 
+            font-weight: bold; 
+            font-size: 1.5em;
+        }
+        .add-ingt{
             margin-top: 15px;
         }
         .ingridients{

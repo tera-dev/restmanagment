@@ -1,7 +1,7 @@
 <div class="row product-search">
         <div class="col-xs-5">
             <label>Поиск</label>
-            <input class="form-control" id="myInput" type="text" placeholder="Быстрый поиск..">
+            <input class="form-control fast-search-index" id="myInput" type="text" placeholder="Быстрый поиск..">
             
         </div>
 </div>

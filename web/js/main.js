@@ -21,6 +21,10 @@
                     find("a").eq(subInnerIndex).addClass('activeLink');
 })();
 
+$(window).on('load',() => {
+    $('input:text.fast-search-index').focus();
+});
+
 //$(function(){
 //            var toDisplay = 1;
 //            $("article h2").click(function(){
