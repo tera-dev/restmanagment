@@ -77,7 +77,7 @@ use app\widgets\ContentHeader;
             <div class="col-xs-3"></div>
             <div class="col-xs-7">
                  <div class="ingridients">
-                     <h4>Ингридиенты</h3>
+                     <h4>Ингридиенты</h4>
                     
                 </div>
                 <div class="btn btn-primary add-ingt">Добавить</div>
@@ -130,6 +130,7 @@ use app\widgets\ContentHeader;
 <<<CSS
        
         div.ingridients h4{ 
+            padding-bottom: 10px;
             font-weight: bold; 
             font-size: 1.5em;
         }
